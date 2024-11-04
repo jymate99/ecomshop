@@ -1,12 +1,12 @@
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper"
 import { Check, Star } from "lucide-react";
 import Phone from '@/app/components/phone';
-import { Icons } from '@/app/components/icon'
+import { Icons } from '@/app/components/icons'
 import { Reviews } from "./components/reviews";
 
 
 export default function Home() {
-  return (
+  return (  
     <div className="bg-slate-50">
       <section>
         <MaxWidthWrapper className="pd-24 pt-10 lg:grid lg:grid-cols-3 sm:pd-32 lg:gap-x-0
