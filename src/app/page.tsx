@@ -1,7 +1,7 @@
 
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper"
 import { Check, Star } from "lucide-react";
-import Phone from '@/app/components/phone';
+import Phone from '@/app/components/Phone';
 import { Icons } from '@/app/components/icon'
 import { Reviews } from "./components/reviews";
 
