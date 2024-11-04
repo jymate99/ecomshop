@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 // need to delete .next folder to work
 import Phone from './Phone.tsx'
 
-const PHONES = [
+const PHOPIC = [
   '/testimonials/1.jpg',
   '/testimonials/2.jpg',
   '/testimonials/3.jpg',
@@ -110,7 +110,7 @@ function Review({ imgSrc, className, ...props }: ReviewProps) {
 function ReviewGrid() {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const isInView = useInView(containerRef, { once: true, amount: 0.4 })
-  const columns = splitArray(PHONES, 3)
+  const columns = splitArray(PHOPIC, 3)
   const column1 = columns[0]
   const column2 = columns[1]
   const column3 = splitArray(columns[2], 2)
