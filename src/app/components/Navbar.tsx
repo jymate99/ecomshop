@@ -2,11 +2,16 @@ import { buttonVariants } from "../../../components/ui/button"
 import MaxWidthWrapper from "./MaxWidthWrapper"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import {RegisterLink, LoginLink,LogoutLink} from "@kinde-oss/kinde-auth-nextjs/components";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { get } from "http";
 
 
-const Navbar =() =>{
-        const user =undefined
-        const isAdmin = false
+
+const Navbar = async() =>{
+        const {getUser} = getKindeServerSession()
+        const user = await getUser()
+        const isAdmin = user?.email === process.env.ADMIN_EMAIL
 
     return (
     <nav className="sticky z-[100] h-14 inset-x-0 top-0 w-full border-b
@@ -20,12 +25,12 @@ const Navbar =() =>{
                 <div className="h-full flex items-center space-x-4">
                     {user ?( 
                         <>
-                            <Link href='/api/auth/register' className={buttonVariants(
+                            <LogoutLink  className={buttonVariants(
                                                 {size:'sm',
                                                 variant:'ghost',
 
                                                 })}>Sign out
-                            </Link>
+                            </LogoutLink>
                             {isAdmin ? <Link href='/dashboard' className={buttonVariants(
                                                 {size:'sm',
                                                 variant:'ghost',
@@ -43,20 +48,20 @@ const Navbar =() =>{
                     (
                         
                             <>
-                            <Link href='/api/auth/logout' className={buttonVariants(
+                            <RegisterLink postLoginRedirectURL="/" className={buttonVariants(
                                                 {size:'sm',
                                                 variant:'ghost',
 
                                                 })}>Sign up
-                            </Link>
-                            
-                            <Link href='/api/auth/login' className={buttonVariants(
+                            </RegisterLink>
+                        
+                            <LoginLink postLoginRedirectURL="/" className={buttonVariants(
                                                 {size:'sm',
                                                 variant:'ghost',
 
                                                 })}>Login
-                            </Link>
-                        
+                            </LoginLink>
+                            
                            <div className="h-8 w-px bg-zinc-200 hidden sm:block" />
                            <Link href='/configure/upload' className={buttonVariants(
                                                 {size:'sm',
