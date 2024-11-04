@@ -1,4 +1,4 @@
-import { buttonVariants } from "../../../components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import MaxWidthWrapper from "./MaxWidthWrapper"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
