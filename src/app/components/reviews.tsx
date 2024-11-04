@@ -4,8 +4,7 @@ import { HTMLAttributes, useEffect, useRef, useState } from 'react'
 import MaxWidthWrapper from './MaxWidthWrapper'
 import { useInView } from 'framer-motion'
 import { cn } from '@/lib/utils'
-// need to delete .next folder to work
-import Phone from './Phone.tsx'
+import Phone from './Phone'
 
 const PHOPIC = [
   '/testimonials/1.jpg',
