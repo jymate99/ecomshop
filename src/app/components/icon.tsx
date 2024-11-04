@@ -1,4 +1,4 @@
-import { LucideProps } from 'lucide-react'
+import { Icon, LucideProps } from 'lucide-react'
 
 export const Icons = {
   underline: (props: LucideProps) => (
@@ -18,3 +18,5 @@ export const Icons = {
     </svg>
   ),
 }
+
+export default Icon
